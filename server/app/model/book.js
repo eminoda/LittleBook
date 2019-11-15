@@ -12,6 +12,9 @@ module.exports = app => {
     press: { type: String }, //出版社
     frontCoverPath: { type: String }, //封面地址
     level: { type: Number }, //品相
+    bookDetailHref: { type: String }, // temp 书籍详情
+    isOpenSell: { type: Number }, // 1 可购买
+    isDelete: { type: Number }, // 1 已删除
     createTime: { type: Date }
   });
 

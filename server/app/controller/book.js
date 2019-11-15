@@ -14,7 +14,11 @@ class BookController extends Controller {
   }
   async index() {
     const { app, ctx, service } = this;
-    ctx.body = await ctx.model.Book.find({});
+    const page = Number(ctx.query.page || 1);
+    const pageSize = Number(ctx.query.pageSize || 10);
+    const list = await service.book.findList({}, { limit: pageSize, skip: (page - 1) * pageSize });
+    const totalPage = await service.book.getCount();
+    ctx.body = { list, totalPage };
   }
 }
 

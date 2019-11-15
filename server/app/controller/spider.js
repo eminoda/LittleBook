@@ -6,14 +6,29 @@ class SpiderController extends Controller {
   async page() {
     const { app, ctx, service } = this;
     let page = 1;
-    while (page <= 212) {
-      let pageList = await service.spider.fetchBookInfo(page);
-      for (let item of pageList) {
-        await ctx.model.Book.create(item);
-      }
-      page++;
+    let totalPage = 201;
+
+    let bookFetchPromise = [];
+    let bookSavePromise = [];
+    while (page <= totalPage) {
+      bookFetchPromise.push(service.spider.fetchBookInfo(page));
+      page = page + 1;
     }
-    ctx.body = page;
+
+    const bookFetchResult = await Promise.all(bookFetchPromise);
+
+    for (let fetchItem of bookFetchResult) {
+      let pageList = service.spider.parseBook(fetchItem);
+      for (let item of pageList) {
+        bookSavePromise.push(
+          new Promise((resolve, reject) => {
+            resolve(ctx.model.Book.create(item));
+          })
+        );
+      }
+    }
+    let data = await Promise.all(bookSavePromise);
+    ctx.body = data;
   }
 }
 
