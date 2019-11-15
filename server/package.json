@@ -7,10 +7,13 @@
     "declarations": true
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "egg": "^2.15.1",
     "egg-mongoose": "^3.2.0",
     "egg-redis": "^2.4.0",
-    "egg-scripts": "^2.11.0"
+    "egg-scripts": "^2.11.0",
+    "superagent": "^5.1.0",
+    "superagent-charset": "^1.2.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",
