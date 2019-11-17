@@ -1,17 +1,19 @@
 <template>
 	<div class="desc">
 		<div class="line">
-			<h1>BookSearch</h1>
-			<div class="sub-title">针对图书搜索场景来实践的 Node 服务应用，可以作为前端（全栈）开发的练手入门项目。</div>
+			<h1>LittleBook（小人书）</h1>
+			<div class="sub-title">一个综合的前端 Node.js 项目，用来展示连环画书籍的店铺。</div>
+			<div class="sub-title">你可以作为前端（全栈）开发的练手入门项目。</div>
 
 			<h2>技术栈</h2>
-			<van-image width="40" height="40" :src="item" v-for="(item,index) in logo" :key="index" />
+			<van-image width="40" height="40" :src="item" v-for="(item, index) in logo" :key="index" />
+			<div class="sub-title">Vue+Vant+Egg+Mongoose+Redis</div>
 
 			<h2>项目地址</h2>
 			<!-- <van-image width="100" height="100" :src="qrcode.gitee" alt="gitee" /> -->
 			<div class="link">https://gitee.com/eminoda/BookSearch</div>
 
-			<van-button to="/bookList" type="primary" size="large" style="margin-top:20px;">进入 Demo</van-button>
+			<van-button to="/home" type="primary" size="large" style="margin-top:20px;">进入 Demo</van-button>
 		</div>
 		<div class="line">
 			<h2>关于我</h2>
@@ -29,15 +31,15 @@ import vant from '../assets/logo/vant.png';
 import vue from '../assets/logo/vue.png';
 import egg from '../assets/logo/egg.png';
 import redis from '../assets/logo/redis.png';
-import sequelize from '../assets/logo/sequelize.png';
+import mongoose from '../assets/logo/mongoose.png';
 export default {
-	name: 'app',
-	data() {
-		return {
-			logo: [vue, vant, egg, sequelize, redis],
-			qrcode: { gitee, webcat, toutiao }
-		};
-	}
+  name: 'app',
+  data() {
+    return {
+      logo: [vue, vant, egg, mongoose, redis],
+      qrcode: { gitee, webcat, toutiao }
+    };
+  }
 };
 </script>
 
