@@ -8,6 +8,8 @@ import './scss/style.scss';
 import { Button, Image, List, Grid, GridItem, Cell, CellGroup, Toast, NavBar, Icon, Search, Tag, Loading, Tabbar, TabbarItem } from 'vant';
 import http from './services/http';
 
+import './filter';
+
 Vue.component(Button.name, Button);
 Vue.component(Image.name, Image);
 Vue.component(List.name, List);

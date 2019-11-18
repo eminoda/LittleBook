@@ -4,3 +4,15 @@ html {
 	font-size: 62.5%;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+	color: $black;
+}
+
+.page-wrap {
+	padding: 0 3%;
+	padding-bottom: 50px;
+}

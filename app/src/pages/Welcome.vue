@@ -9,9 +9,12 @@
 			<van-image width="40" height="40" :src="item" v-for="(item, index) in logo" :key="index" />
 			<div class="sub-title">Vue+Vant+Egg+Mongoose+Redis</div>
 
-			<h2>项目地址</h2>
+			<h2>
+				项目地址
+				<span>觉得不错，点个 star 吧</span>
+			</h2>
 			<!-- <van-image width="100" height="100" :src="qrcode.gitee" alt="gitee" /> -->
-			<div class="link">https://gitee.com/eminoda/BookSearch</div>
+			<div class="link">https://gitee.com/eminoda/LittleBook</div>
 
 			<van-button to="/home" type="primary" size="large" style="margin-top:20px;">进入 Demo</van-button>
 		</div>
@@ -33,21 +36,27 @@ import egg from '../assets/logo/egg.png';
 import redis from '../assets/logo/redis.png';
 import mongoose from '../assets/logo/mongoose.png';
 export default {
-  name: 'app',
-  data() {
-    return {
-      logo: [vue, vant, egg, mongoose, redis],
-      qrcode: { gitee, webcat, toutiao }
-    };
-  }
+	name: 'app',
+	data() {
+		return {
+			logo: [vue, vant, egg, mongoose, redis],
+			qrcode: { gitee, webcat, toutiao }
+		};
+	}
 };
 </script>
 
 <style lang="scss" scoped>
 @import '../scss/_variables.scss';
-
+h2 {
+	span {
+		font-size: 12px;
+		font-weight: normal;
+		color: $gray-500;
+	}
+}
 .desc {
-	padding: 20px 4% 0;
+	padding: 0 4% 0;
 	.line {
 		border-bottom: 1px solid $gray-200;
 		padding-bottom: 5%;
@@ -55,11 +64,12 @@ export default {
 	.sub-title {
 		font-size: 1.4rem;
 		margin-top: 1rem;
-		color: $gray-500;
+		color: $black;
+		padding-bottom: 2%;
 	}
 	.link {
 		font-size: 1.3rem;
-		color: $gray-500;
+		color: $gray-800;
 	}
 }
 </style>
