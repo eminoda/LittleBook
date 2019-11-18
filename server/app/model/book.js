@@ -18,6 +18,6 @@ module.exports = app => {
 		createTime: { type: Date }
 	});
 
-	mongoose.set('debug', true);
+	// mongoose.set('debug', true);
 	return mongoose.model('Book', schema);
 };
