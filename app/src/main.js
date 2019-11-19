@@ -5,10 +5,11 @@ Vue.config.productionTip = false;
 
 import 'vant/lib/index.css';
 import './scss/style.scss';
-import { Button, Image, List, Grid, GridItem, Cell, CellGroup, Toast, NavBar, Icon, Search, Tag, Loading, Tabbar, TabbarItem } from 'vant';
+import { Button, Image, List, Grid, GridItem, Cell, CellGroup, Toast, NavBar, Icon, Search, Tag, Loading, Tabbar, TabbarItem, Dialog } from 'vant';
 import http from './services/http';
 
 import './filter';
+import './directive';
 
 Vue.component(Button.name, Button);
 Vue.component(Image.name, Image);
@@ -32,6 +33,7 @@ context.keys().map(item => {
 });
 Vue.use(Tabbar).use(TabbarItem);
 Vue.use(http);
+Vue.use(Dialog);
 new Vue({
 	router,
 	render: h => h(App)

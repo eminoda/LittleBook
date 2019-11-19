@@ -13,6 +13,11 @@ a:active {
 }
 
 .page-wrap {
-	padding: 0 3%;
 	padding-bottom: 50px;
+	background-color: $gray-100;
+}
+
+.main {
+	padding-top: 46px;
+	background-color: $white;
 }

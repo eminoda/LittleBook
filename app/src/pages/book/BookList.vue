@@ -46,6 +46,7 @@ export default {
       error: false, currentField: '',
       sortField: 'name',
       sortFields: [
+        { direction: 'asc', text: '名称', field: 'name', row: ' ↑' },
         { direction: 'asc', text: '价格', field: 'price', row: ' ↑' },
         { direction: 'asc', text: '品相', field: 'level', row: ' ↑' }
       ]

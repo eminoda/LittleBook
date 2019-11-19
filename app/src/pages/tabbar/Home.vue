@@ -11,7 +11,13 @@
 		<div class="recommend-wrap">
 			<h2>「前端」推荐文章</h2>
 			<div class="title-desc">如下是最受欢迎的 10 篇小短文，相信质量也受到各位读者的肯定。如果你有兴趣，不妨一读。</div>
-			<a class="article-wrap" :href="'https://toutiao.com/' + item.source_url" v-for="(item, index) in articles" :key="index" target="_blank">
+			<a
+				class="article-wrap"
+				:href="'https://toutiao.com/' + item.source_url"
+				v-for="(item, index) in articles"
+				:key="index"
+				target="_blank"
+			>
 				<img :src="item.image_url" alt />
 				<div class="article-info">
 					<div class="title">{{ item.title }}</div>
@@ -33,35 +39,35 @@ components[SwipeItem.name] = SwipeItem;
 
 import util from '../../services/util';
 export default {
-  name: 'Home',
-  components,
-  data() {
-    return {
-      banner: {
-        height: 0
-      },
-      articles: []
-    };
-  },
-  created() {
-    this.banner.height = window.innerHeight * 0.3;
-    this.getArticle();
-  },
-  methods: {
-    getArticle() {
-      this.$http
-        .request({
-          url: '/toutiao/articles',
-          data: {}
-        })
-        .then(data => {
-          this.articles = data.splice(0, 10);
-        })
-        .catch(err => {
-          util.showToast(err.message);
-        });
-    }
-  }
+	name: 'Home',
+	components,
+	data() {
+		return {
+			banner: {
+				height: 0
+			},
+			articles: []
+		};
+	},
+	created() {
+		this.banner.height = window.innerHeight * 0.3;
+		this.getArticle();
+	},
+	methods: {
+		getArticle() {
+			this.$http
+				.request({
+					url: '/toutiao/articles',
+					data: {}
+				})
+				.then(data => {
+					this.articles = data.splice(0, 10);
+				})
+				.catch(err => {
+					util.showToast(err.message);
+				});
+		}
+	}
 };
 </script>
 <style lang="scss" scoped>
@@ -71,6 +77,7 @@ export default {
 }
 
 .recommend-wrap {
+	padding: 0 3%;
 	h2 {
 		background-color: $gray-300;
 		padding: 2% 0;

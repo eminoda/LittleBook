@@ -17,9 +17,9 @@ export default {
         to: { path: '/bookList' },
         name: "书店"
       }, {
-        icon: "contact",
+        icon: "more-o",
         to: { path: '/user' },
-        name: "关于我"
+        name: "更多"
       }]
     }
   },

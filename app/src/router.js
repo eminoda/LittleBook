@@ -4,6 +4,7 @@ import Router from 'vue-router';
 const Welcome = () => require.ensure([], () => require('./pages/Welcome.vue'), 'Welcome');
 const Home = () => require.ensure([], () => require('./pages/tabbar/Home.vue'), 'Home');
 const User = () => require.ensure([], () => require('./pages/tabbar/User.vue'), 'User');
+const Aboutme = () => require.ensure([], () => require('./pages/user/Aboutme.vue'), 'Aboutme');
 const BookList = () => require.ensure([], () => require('./pages/book/BookList.vue'), 'BookList');
 const BookItem = () => require.ensure([], () => require('./pages/book/BookItem.vue'), 'BookItem');
 
@@ -13,6 +14,7 @@ const routes = [
 	{ path: '/', component: Welcome },
 	{ path: '/home', component: Home },
 	{ path: '/user', component: User },
+	{ path: '/user/aboutme', component: Aboutme },
 	{ path: '/bookList', component: BookList },
 	{ path: '/bookItem', component: BookItem, name: 'bookItem' }
 ];
