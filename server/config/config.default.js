@@ -15,7 +15,7 @@ module.exports = appInfo => {
 	config.mongoose = {
 		client: {
 			url: 'mongodb://47.103.139.109:27017/littlebook',
-			options: { user: 'littlebook_rw', pass: '741852963', useNewUrlParser: true }
+			options: { user: 'littlebook', pass: '741852963', useNewUrlParser: true }
 			// mongoose global plugins, expected a function or an array of function and options
 			// plugins: [createdPlugin, [updatedPlugin, pluginOptions]]
 		}
